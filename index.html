@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite de Casamento</title>
+    <link rel="icon" href="icone-pagina.png">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Primeira parte (confirmação) -->
+        <div class="card" id="parte1">
+            <div class="image-container">
+                <img src="uNico.png" alt="Casal">
+            </div>
+            <h1 class="title">✩ Save the Date ✩</h1>
+            <p class="message">
+                Você foi convidado para o meu casamento! <br>
+                Posso contar com a sua presença?
+            </p>
+            <input type="text" class="input-name" id="nomeConvidado" placeholder="Insira Seu Nome">
+            <div class="options">
+                <label><input type="checkbox" id="confirmarPresenca"> Sim</label>
+                <label><input type="checkbox" id="naoConfirmar"> Não</label>
+            </div>
+            <button class="next-button" onclick="salvarNome()">Confirmar</button>
+        </div>
+
+        <!-- Segunda parte (se for) -->
+        <div class="card" id="parte2" style="display: none;">
+            <div class="image-container">
+                <img src="uNico.png" alt="Casal">
+            </div>
+            <h1 class="title">✩ Save the Date ✩</h1>
+            <p class="message">Ficamos felizes em contar com a sua presença!</p>
+            <p class="guest-name"><strong>*<span id="nomeExibido"></span>*</strong></p>
+            <p class="message">Nosso casamento será realizado em *Local*, no dia *Data*.</p>
+            <p class="message">Contamos com a sua presença!!</p>
+        </div>
+
+        <!-- Terceira parte (se não for) -->
+        <div class="card" id="parte3" style="display: none;">
+            <div class="image-container">
+                <img src="uNico.png" alt="Casal">
+            </div>
+            <h1 class="title">✩ Que pena... ✩</h1>
+            <p class="message">Sentiremos sua falta no nosso casamento! 😢</p>
+            <p class="guest-name"><strong>*<span id="nomeExibido2"></span>*</strong></p>
+            <p class="message">Obrigado por nos avisar. Quem sabe em uma próxima celebração?</p>
+        </div>
+    </div>
+
+    <!-- Formulário invisível para envio de e-mail -->
+    <form id="formConfirmacao" action="https://formsubmit.co/SeuEmail" method="POST" style="display: none;">
+        <input type="hidden" name="Nome" id="inputNome">
+        <input type="hidden" name="Presença" id="inputPresenca">
+        <input type="hidden" name="_subject" id="emailSubject">
+        <input type="hidden" name="_captcha" value="false">
+    </form>
+</body>
+</html>
