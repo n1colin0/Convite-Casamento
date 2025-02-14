@@ -22,9 +22,10 @@
             </p>
             <input type="text" class="input-name" id="nomeConvidado" placeholder="Insira Seu Nome">
             <div class="options">
-                <label><input type="checkbox" id="confirmarPresenca"> Sim</label>
-                <label><input type="checkbox" id="naoConfirmar"> Não</label>
+                <label><input type="radio" name="presenca" value="Sim" id="confirmarPresenca"> Sim</label>
+                <label><input type="radio" name="presenca" value="Não" id="naoConfirmar"> Não</label>
             </div>
+            <br>
             <button class="next-button" onclick="salvarNome()">Confirmar</button>
         </div>
 
@@ -53,7 +54,7 @@
     </div>
 
     <!-- Formulário invisível para envio de e-mail -->
-    <form id="formConfirmacao" action="https://formsubmit.co/SeuEmail" method="POST" style="display: none;">
+    <form id="formConfirmacao" action="https://formsubmit.co/notificationcasamento@gmail.com" method="POST" style="display: none;">
         <input type="hidden" name="Nome" id="inputNome">
         <input type="hidden" name="Presença" id="inputPresenca">
         <input type="hidden" name="_subject" id="emailSubject">
